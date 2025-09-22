@@ -1,0 +1,109 @@
+/* Enquiry Button */
+.rt-enquiry-btn {
+  position: fixed;
+  top: 76%;
+  right: 50px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.rt-enquiry-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: rotate(-90deg) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Slide Form Panel */
+.rt-contact-panel {
+  position: fixed;
+  top: 50%;
+  right: -320px; /* hidden initially */
+  transform: translateY(-50%);
+  width: 300px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.rt-contact-panel.rt-show {
+  right: 70px; /* show when active */
+}
+
+/* Form */
+.rt-contact-panel h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #dd2476;
+}
+
+.rt-contact-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rt-contact-panel input,
+.rt-contact-panel select,
+.rt-contact-panel textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.rt-contact-panel input:focus,
+.rt-contact-panel select:focus,
+.rt-contact-panel textarea:focus {
+  border-color: #dd2476;
+  box-shadow: 0 0 6px rgba(221,36,118,0.5);
+}
+
+.rt-contact-panel button.rt-submit-btn {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rt-contact-panel button.rt-submit-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rt-contact-panel {
+    width: 90%;
+    right: -100%;
+  }
+  .rt-contact-panel.rt-show {
+    right: 5%;
+  }
+}
