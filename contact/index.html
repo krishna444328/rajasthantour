@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Logo Contact Form</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(#c9d6ff,#e2e2e2);color:#fff;}
+    .container{display:flex;background:rgba(255,255,255,0.05);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 8px 25px rgba(0,0,0,0.4);overflow:hidden;max-width:1000px;width:95%;transition: transform 1s ease-in-out, opacity 1s ease-in-out;}
+    .container.closeBook{transform: rotateY(90deg) scale(0.2);opacity: 0;}
+    .success-message{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%) scale(0);background:white;color:black;padding:25px 40px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.3);font-size:20px;font-weight:bold;opacity:0;transition: all 0.6s ease-in-out;}
+    .success-message.show{transform: translate(-50%,-50%) scale(1);opacity:1;}
+    .left{flex:1;background:rgba(255,255,255,0.07);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 20px;border-right:1px solid rgba(255,255,255,0.15);}
+    .logo{width:160px;height:160px;background: url("../img/logo-white.png") no-repeat center/contain;animation: rotateLogo 8s linear infinite;}
+    @keyframes rotateLogo{0%{transform:rotateY(0deg);}100%{transform:rotateY(360deg);}}
+    .contact-info{margin-top:25px;text-align:center;}
+    .contact-info a{margin:12px 0;font-size:16px;display:flex;align-items:center;gap:10px;text-decoration:none;color:black;transition:0.3s;}
+    .contact-info a:hover{color:#00ffcc;transform:scale(1.05);}
+    .social-icons{margin-top:25px;display:flex;gap:18px;justify-content:center;}
+    .social-icons a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background: rgb(60 39 39 / 10%);font-size:18px;text-decoration:none;color:black;transition:0.4s;}
+    .social-icons a:hover{color:#00ffcc;box-shadow:0 0 12px #00ffcc, 0 0 20px #00ffcc;transform:scale(1.2);}
+    .right{flex:1.5;padding:40px 30px;}
+    .right h2{margin-bottom:20px;font-size:28px;text-align:center;color:black;}
+    form{display:flex;flex-direction:column;gap:15px;}
+    input,textarea,select{padding:12px;border:none;border-radius:8px;outline:none;background:rgba(255,255,255,0.1);color:black;font-size:15px;transition:0.3s;box-shadow:0 0 8px rgba(207,216,214,0.4);}
+    input:focus,textarea:focus,select:focus{background:rgba(255,255,255,0.2);box-shadow:0 0 8px #00ffcc;}
+    textarea{resize:none;height:80px;}
+    button{padding:14px;border:none;border-radius:8px;background: linear-gradient(45deg,#00ffcc,#00bfff);color:#000;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s;}
+    button:hover{transform:scale(1.05);background: linear-gradient(45deg,#00bfff,#00ffcc);}
+    @media(max-width:900px){.container{flex-direction:column;}.left{border-right:none;border-bottom:1px solid rgba(255,255,255,0.2);}}
+    #formMsg{margin-top:8px;color:#fff;text-align:center;font-weight:600;}
+    #formMsg.error{color: #ff4d4f;}
+    #formMsg.success{color: #0a6b2f;}
+  </style>
+</head>
+<body>
+
+<div class="container" id="formBox">
+  <div class="left">
+    <div class="logo"></div>
+    <div class="contact-info">
+      <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 9876543210</a>
+      <a href="mailto:contact@yourmail.com"><i class="fas fa-envelope"></i> contact@yourmail.com</a>
+      <a href="https://wa.me/919116685533" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="right">
+    <h2>Send a Request</h2>
+    <form id="contactForm" method="POST" novalidate>
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Only 10 digit numbers allowed" required>
+      <input type="text" name="address" placeholder="Your Address" required>
+      <select name="destination" required>
+        <option value="">Select Destination</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Goa</option>
+        <option>Jaipur</option>
+      </select>
+      <textarea name="message" placeholder="Enter Description"></textarea>
+      <button type="submit">Send Request</button>
+      <div id="formMsg"></div>
+    </form>
+  </div>
+</div>
+
+<div class="success-message" id="successMsg">
+  ✅ Your Request Submitted Successfully!
+</div>
+
+<script>
+const form = document.getElementById('contactForm');
+const formBox = document.getElementById('formBox');
+const successMsg = document.getElementById('successMsg');
+const formMsg = document.getElementById('formMsg');
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  formMsg.textContent = '';
+  formMsg.className = '';
+
+  const btn = form.querySelector('button[type="submit"]');
+  const originalBtnText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try{
+    const fd = new FormData(form);
+    const res = await fetch('../send_email.php',{method:'POST', body:fd});
+    if(!res.ok) throw new Error('Network response was not ok');
+
+    const data = await res.json();
+    if(data.success){
+      formBox.classList.add('closeBook');
+      setTimeout(()=>successMsg.classList.add('show'),1000);
+      form.reset();
+    } else{
+      formMsg.textContent = data.message || 'Something went wrong.';
+      formMsg.classList.add('error');
+    }
+
+  } catch(err){
+    console.error(err); // real error object देखें
+    formMsg.textContent = 'Network error or server error. Check console.';
+    formMsg.classList.add('error');
+  } finally{
+    btn.disabled = false;
+    btn.textContent = originalBtnText;
+  }
+});
+</script>
+</body>
+</html>

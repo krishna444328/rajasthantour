@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rajasthan Tour Cab</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="../css/style.css">
+       <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f8f8f8;
+       padding-top: 6px;
+    }
+
+    nav {
+      width: 100%;
+      background-color: white;
+      /* background: linear-gradient(90deg, #1e3c72, #2a5298); */
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      transition: left 0.4s ease;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 18px;
+      display: block;
+      transition: 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      background: #fff;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-height: 500px;     /* dropdown ki max height */
+  overflow-y: auto;      /* vertical scroll enable */
+   -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  scroll-behavior: smooth;
+
+  /* hide scrollbar in Firefox / IE */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE 10+ */
+    }
+
+    .dropdown a {
+      color: #333;
+      padding: 12px 16px;
+      font-weight: 400;
+      width: 278px;
+    }
+
+    .dropdown a:hover {
+      background: #f1f1f1;
+      color: #1e3c72;
+    }
+
+    .nav-links li:hover .dropdown {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      /* height: 3px;
+      width: 28px;
+      background: black;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.4s; */
+      height: 5px;
+    width: 21px;
+    background: black;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.4s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        /* position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #2a5298;
+        flex-direction: column;
+        width: 240px;
+        height: calc(100vh - 70px);
+        justify-content: flex-start;
+        padding-top: 20px; */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: white;
+        flex-direction: column;
+        width: 310px;
+        height: calc(100vh - 70px);
+        justify-content: flex-start;
+        padding-top: 20px;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links.show {
+        left: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links .dropdown {
+        position: static;
+        box-shadow: none;
+        background: #1e3c72;
+         /* 👇 scroll fix add karo */
+  max-height: 300px;              /* height limit */
+  overflow-y: auto;               /* enable vertical scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+  scrollbar-width: none;          /* Firefox hide scrollbar */
+  -ms-overflow-style: none;       /* IE/Edge hide scrollbar */
+      }
+
+      .dropdown a {
+        color: #fff;
+      }
+
+      .dropdown a:hover {
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+      }
+    }
+  </style>
+     <style>
+    /* Banner Section */
+    .about-banner {
+      background-image: url('../img/palace-golden-city-jaipur_11zon-1024x696.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 70px;
+      position: relative;
+    }
+
+    .about-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .about-banner h1 {
+      position: relative;
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .about-banner {
+        height: 200px;
+      }
+      
+      .about-banner h1 {
+        font-size: 2rem;
+      }
+    }
+
+</style>
+    <style>
+  .testimonial-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .testimonial-section h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #222;
+    position: relative;
+  }
+
+  .testimonial-section h1::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #ff6600;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  .testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ff6600;
+  }
+
+  .author h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  .author span {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .testimonial-section {
+      padding: 25px 15px;
+    }
+    .testimonial-card {
+      padding: 20px;
+    }
+    .author img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>
+<style>
+     .faq {
+      max-width: 700px;
+      margin: 10px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .faq-question {
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      margin: 0;
+      color: #222;
+      position: relative;
+    }
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 10px;
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+    .faq.active .faq-question::after {
+      content: "-";
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 10px;
+      color: #555;
+    }
+    .faq.active .faq-answer {
+      max-height: 200px; /* Answer ki height ke hisaab se adjust ho jayega */
+      margin-top: 10px;
+    }
+</style>
+  <style>
+    
+  .cards {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (max-width:1100px){
+    .cards{ grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width:720px){
+    .cards{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width:480px){
+    .cards{ grid-template-columns: 1fr; }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+  }
+  </style>
+  <style>
+    /* Enquiry Button */
+.enquiry-btn {
+  position: fixed;
+  top: 40%;
+  right: 50px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 50px; /* fully rounded */
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+/* Hover effect */
+.enquiry-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: rotate(-90deg) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Slide Panel */
+.contact-panel {
+  position: fixed;
+  top: 50%;
+  right: -250px; /* hidden initially */
+  transform: translateY(-50%);
+  width: 220px;
+  background: #fff;
+  border-radius: 30px; /* round panel */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.contact-panel.show {
+  right: 70px; /* show when active */
+}
+
+/* Panel options */
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 50px; /* fully rounded */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-option i {
+  font-size: 20px;
+}
+
+/* Specific colors */
+.mail { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.phone { background: linear-gradient(135deg, #ff512f, #dd2476); }
+
+.contact-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+  </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+    <!-- yaha apna logo image daalna -->
+    <div class="logo">
+      <a href="#"><img src="../img/logo-white.png" alt="Logo"></a>
+    </div>
+
+ <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about/">About</a></li>
+      <!-- <li><a href="#">Packages</a></li> -->
+      <li>
+        <a href="#">Packages</a>
+        <div class="dropdown">
+          <a href="../3day-tour/">3 Days Rajasthan Tour Packages</a>
+          <a href="../4day-tour/">4 Days Rajasthan Tour Packages</a>
+          <a href="../5day-tour/">5 Days Rajasthan Tour Packages</a>
+          <a href="../6day-tour/">6 Days Rajasthan Tour Packages</a>
+          <a href="../7day-tour/">7 Days Rajasthan Tour Packages</a>
+          <a href="../8day-tour/">8 Days Rajasthan Tour Packages</a>
+          <a href="../9day-tour/">9 Days Rajasthan Tour Packages</a>
+          <a href="../10day-tour/">10 Days Rajasthan Tour Packages</a>
+          <a href="../11day-tour/">11 Days Rajasthan Tour Packages</a>
+          <a href="../12day-tour/">12 Days Rajasthan Tour Packages</a>
+          <a href="../13day-tour/">13 Days Rajasthan Tour Packages</a>
+          <a href="../14day-tour/">14 Days Rajasthan Tour Packages</a>
+        </div>
+      </li>
+      <li>
+        <a href="../Taxi/">Taxi ▾</a>
+        <div class="dropdown">
+          <a href="#">Local Taxi</a>
+          <a href="#">Outstation Taxi</a>
+        </div>
+      </li>
+      <li><a href="../Travel-Guide/">Travel Guide</a></li>
+      <li><a href="../Blogs/">Blogs</a></li>
+      <li><a href="../Contact/">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <!-- Navbar End  -->
+
+  <!-- Banner Section -->
+  <div class="about-banner">
+    <div class="container">
+      <h1>6 Days Rajasthan Tour Packages</h1>
+    </div>
+  </div>
+  <!-- Banner Section End -->
+<div class="cards">
+    <a href="#" class="card">
+      <img src="../img/blog1.webp" alt="Trip 1" loading="lazy">
+      <p>Galtaji Temple, Jaipur</p>
+    </a>
+    <a href="#" class="card">
+      <img src="../img/blog2.jpeg" alt="Trip 2" loading="lazy">
+      <p>City Palace, Jaipur</p>
+    </a>
+    <a href="#" class="card">
+      <img src="../img/blog3.jpeg" alt="Trip 3" loading="lazy">
+      <p>Jal Mahal, Jaipur</p>
+    </a>
+    <a href="#" class="card">
+      <img src="../img/blog4.jpeg" alt="Trip 4" loading="lazy">
+      <p>Hawa Mahal, Jaipur</p>
+    </a>
+    <a href="#" class="card">
+      <img src="../img/blog5.jpg" alt="Trip 5" loading="lazy">
+      <p>Man Sagar Lake & Jal Mahal,</p>
+    </a>
+  </div>
+<!-- Enquiry Button -->
+<button class="enquiry-btn" onclick="togglePanel()">
+  <i class="fa-solid fa-envelope"></i> Enquiry
+</button>
+
+<!-- Slide Panel -->
+<div class="contact-panel" id="contactPanel">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@rajasthantourcabs.com" class="contact-option mail">
+    <i class="fa-solid fa-envelope"></i> Mail
+  </a>
+  <a href="https://wa.me/919116685533" target="_blank" class="contact-option whatsapp">
+    <i class="fa-brands fa-whatsapp"></i> +91-16685533
+  </a>
+  <a href="tel:+919116685533" class="contact-option phone">
+    <i class="fa-solid fa-phone"></i> +91-116685533
+  </a>
+</div>
+
+<script>
+function togglePanel() {
+  document.getElementById("contactPanel").classList.toggle("show");
+}
+</script>
+  <!-- About Content Section -->
+<div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">6 Days Rajasthan Tour</h1>
+    <p style="color: #555;font-size: 15px;text-align: justify;">
+Rajasthan, India’s land of kings, offers a mesmerizing blend of cultural richness, traditional food, and historical places. Rajasthan is a place that you can never get enough of. The state has something for everyone, from the majestic palaces to the golden sand dunes. If you’re planning to visit Rajasthan, Rajasthan Tour Cabs offers 6 days Rajasthan tour packages that cover the most exciting destinations in Rajasthan.
+    </p>
+  </div>
+
+  <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">Book Your Rajasthan Tour Package Now and Get Ready to Explore!</h1>
+    <p style="color: #555;font-size: 15px;text-align: justify;">
+Are you ready to embark on a journey through the magical land of Rajasthan? Look no further than our 6 days trip in Rajasthan that is tailored to provide you with an unforgettable experience. With our expertly crafted itinerary, you’ll get to explore the best of what Rajasthan has to offer. From the historic forts and palaces of Jaipur to the shimmering sands of Jaisalmer, our tour package takes you on a journey through this enchanting state’s rich history and culture.
+
+    </p>
+  </div>
+
+  <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">Book Your Rajasthan Tour Package Now and Get Ready to Explore!</h1>
+    <p style="color: #555;font-size: 15px;text-align: justify;">
+So why wait? Book the cheapest Rajasthan tour packages now and prepare for a lifetime experience. Let Rajasthan Tour Cabs take care of all the details while you sit back, relax, and immerse yourself in the beauty of Rajasthan.
+    </p>
+  </div>
+<h1 style="text-align: center;margin-bottom: 20px;color: #333;">Frequently Asked Questions (FAQs)</h1>
+
+  <div class="faq">
+    <p class="faq-question">Q1: Ye FAQ section kaise kaam karta hai?</p>
+    <div class="faq-answer">
+      <p>Answer: Jab aap question pe click karte ho to uska answer niche toggle hoke show hota hai. Dubara click karne se band ho jata hai.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <p class="faq-question">Q2: Kya ye section mobile friendly hai?</p>
+    <div class="faq-answer">
+      <p>Answer: Haan, ye design responsive hai. Mobile aur desktop dono par sahi se dikhai dega.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <p class="faq-question">Q3: Kya mai apne hisaab se aur questions add kar sakta hoon?</p>
+    <div class="faq-answer">
+      <p>Answer: Bilkul, aap bas ek naya <code>.faq</code> div add kar ke apne questions aur answers dal sakte ho.</p>
+    </div>
+  </div>
+
+  <script>
+    const faqs = document.querySelectorAll(".faq");
+    faqs.forEach(faq => {
+      faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+      });
+    });
+  </script>
+
+  <!-- Testimonial Section -->
+<section class="testimonial-section">
+  <h1>What Our Customers Say</h1>
+  <div class="testimonial-container">
+    
+    <div class="testimonial-card">
+      <p>"Rajasthan Tour Cab made my Jaipur trip unforgettable. The team was so helpful and guided us perfectly through every destination."</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/80?img=12" alt="Client">
+        <div>
+          <h4>Rahul Mehta</h4>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonial-card">
+      <p>"Excellent service, very professional and friendly. We saw many hidden gems of Jaipur that we would have missed otherwise. Highly recommended!"</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/80?img=47" alt="Client">
+        <div>
+          <h4>Neha Sharma</h4>
+          <span>Mumbai, India</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonial-card">
+      <p>"Affordable packages and amazing hospitality. Truly felt like being part of a family during the trip."</p>
+      <div class="author">
+        <img src="https://i.pravatar.cc/80?img=32" alt="Client">
+        <div>
+          <h4>Arjun Singh</h4>
+          <span>Bangalore, India</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+  <!-- About Content Section End -->
+
+    <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        
+        <!-- About -->
+        <div class="col-lg-3 col-md-6 footer-col">
+          <img src="../img/logo-white.png" alt="Logo" class="mb-3">
+          <p>Jaipur’s Rathore Tour & Travels is a well-known travel agency that specialises in tours of Rajasthan.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+                <div class="col-lg-3 col-md-6 footer-col">
+          <h5>CONTACT US</h5>
+          <a href="tel:+919116685533"><i class="fas fa-phone"></i> +91-9116685533</a>
+          <a href="https://api.whatsapp.com/send?phone=919116685533"><i class="fa-brands fa-whatsapp"></i> +91-9116685533</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@rajasthantourcabs.com" target="_blank"><i class="fa-solid fa-envelope"></i> info@rajasthantourcabs.com</a>
+          <!-- <a href="mailto:surenidealtp@gmail.com"><i class="fas fa-envelope"></i> surenidealtp@gmail.com</a> -->
+          <p><i class="fas fa-map-marker-alt"></i>409, Durga Business Centre, Vidhayak Puri, Mirza Ismail Rd, opposite Hotel Gangaur RTDC, Jaipur, Rajasthan 302001</p>
+        </div>
+
+ <!-- Support -->
+        <div class="col-lg-3 col-md-6 footer-col">
+          <h5>SUPPORT</h5>
+          <a href="../about/">About Us</a>
+          <!-- <a href="../3day-tour/">Services</a> -->
+          <a href="#">Testimonials</a>
+          <a href="../contact/">Contact Us</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-6 footer-col">
+          <h5>QUICK LINKS</h5>
+          <a href="#">Tour Packages</a>
+          <!-- <a href="#">Car Rental</a> -->
+          <a href="../Taxi/">Taxi Booking</a>
+          <a href="../Travel-Guide/">Travel Guide</a>
+          <a href="../Blogs/">Blog</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>Copyright © 2024 Rathore Tour Travels | All Rights Reserved</p>
+    </div>
+  </footer>
+
+      <script>
+    function toggleMenu(hamburger) {
+      const navLinks = document.querySelector(".nav-links");
+      navLinks.classList.toggle("show");
+
+      // animate hamburger icon
+      hamburger.classList.toggle("active");
+      const spans = hamburger.querySelectorAll("span");
+      if (hamburger.classList.contains("active")) {
+        spans[0].style.transform = "rotate(45deg) translate(5px, 6px)";
+        spans[1].style.opacity = "0";
+        spans[2].style.transform = "rotate(-45deg) translate(6px, -6px)";
+      } else {
+        spans[0].style.transform = "rotate(0)";
+        spans[1].style.opacity = "1";
+        spans[2].style.transform = "rotate(0)";
+      }
+    }
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

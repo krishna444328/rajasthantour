@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiry Button with Slide Options</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+/* Enquiry Button */
+.enquiry-btn {
+  position: fixed;
+  top: 40%;
+  right: 50px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 50px; /* fully rounded */
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+/* Hover effect */
+.enquiry-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: rotate(-90deg) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Slide Panel */
+.contact-panel {
+  position: fixed;
+  top: 50%;
+  right: -250px; /* hidden initially */
+  transform: translateY(-50%);
+  width: 220px;
+  background: #fff;
+  border-radius: 30px; /* round panel */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.contact-panel.show {
+  right: 70px; /* show when active */
+}
+
+/* Panel options */
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 50px; /* fully rounded */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-option i {
+  font-size: 20px;
+}
+
+/* Specific colors */
+.mail { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.phone { background: linear-gradient(135deg, #ff512f, #dd2476); }
+
+.contact-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+
+<!-- Enquiry Button -->
+<button class="enquiry-btn" onclick="togglePanel()">
+  <i class="fa-solid fa-envelope"></i> Enquiry
+</button>
+
+<!-- Slide Panel -->
+<div class="contact-panel" id="contactPanel">
+  <a href="mailto:demo@gmail.com" class="contact-option mail">
+    <i class="fa-solid fa-envelope"></i> Mail
+  </a>
+  <a href="https://wa.me/911234567890" target="_blank" class="contact-option whatsapp">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="tel:+911234567890" class="contact-option phone">
+    <i class="fa-solid fa-phone"></i> Call
+  </a>
+</div>
+
+<script>
+function togglePanel() {
+  document.getElementById("contactPanel").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

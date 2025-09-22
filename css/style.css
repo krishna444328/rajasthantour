@@ -1,0 +1,545 @@
+    .services-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    .service-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .service-box:nth-child(1) { animation-delay: 0.2s; }
+    .service-box:nth-child(2) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .service-text h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #e67e22; /* Orange heading */
+    }
+
+    .service-text p {
+      margin-bottom: 15px;
+      font-size: 15px;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .service-text a {
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .service-text a:hover {
+      color: #c0392b;
+    }
+
+    .service-image img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .service-box {
+        grid-template-columns: 1fr;
+      }
+      .service-text h3 {
+        font-size: 20px;
+      }
+    }
+        /* Unique class names to avoid conflict */
+    .taxi-box-188 {
+      /* max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6; */
+      max-width: 1173px;
+    margin: -4px auto;
+    padding: 20px;
+    /* border-radius: 12px; */
+    /* background: #fff; */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.08); */
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    }
+
+    .taxi-heading-188 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .taxi-content-188 p {
+      font-size: 16px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .taxi-content-188 strong {
+      font-weight: 600;
+      color: #000;
+    }
+
+    .taxi-content-188 .highlight-188 {
+      color: #e84393; /* Pink highlight text */
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .taxi-heading-188 {
+        font-size: 22px;
+      }
+      .taxi-content-188 p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .taxi-box-188 {
+        padding: 15px;
+      }
+      .taxi-heading-188 {
+        font-size: 20px;
+      }
+      .taxi-content-188 p {
+        font-size: 14px;
+      }
+    }
+    /* Unique section */
+    .tour-section {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    .tour-section .tour-heading {
+      text-align: left;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .tour-section .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .tour-section .tour-card {
+      display: block;
+      background: #214d42;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none; /* link underline hatayega */
+      transition: 0.3s;
+    }
+
+    .tour-section .tour-card:hover {
+      background: #2c6657;
+      transform: translateY(-5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tour-section .tour-heading {
+        font-size: 22px;
+      }
+      .tour-section .tour-card {
+        font-size: 15px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tour-section .tour-heading {
+        text-align: center;
+      }
+    }
+    .why-choose-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .why-choose-heading {
+      font-size: 32px;
+      font-weight: bold;
+      color: #c4952d;
+      margin-bottom: 40px;
+    }
+
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .why-choose-card {
+      background: #214d42;
+      color: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.8s forwards;
+    }
+
+    /* Different delay for animation cards */
+    .why-choose-card:nth-child(1) { animation-delay: 0.2s; }
+    .why-choose-card:nth-child(2) { animation-delay: 0.4s; }
+    .why-choose-card:nth-child(3) { animation-delay: 0.6s; }
+    .why-choose-card:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .why-choose-card:hover {
+      background: #2c6657;
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .why-choose-icon {
+      font-size: 40px;
+      background: #fff;
+      color: #214d42;
+      padding: 20px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .why-choose-card:hover .why-choose-icon {
+      background: #c4952d;
+      color: #fff;
+      transform: rotate(360deg);
+    }
+
+    .why-choose-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .why-choose-heading {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .why-choose-heading {
+        font-size: 22px;
+      }
+    }
+     .destination-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .destination-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .destination-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .destination-body {
+      padding: 15px;
+    }
+    .destination-price {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .destination-location {
+      color: #f4b400; /* golden marker color */
+      font-size: 15px;
+      font-weight: 500;
+    }
+     .reviews-section {
+      padding: 60px 20px;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      max-width: 500px;
+      margin: auto;
+    }
+    .review-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #f4b400;
+    }
+    .review-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .review-role {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .review-text {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    .stars i {
+      color: #ffc107;
+      margin: 0 2px;
+    }
+    /* Carousel indicators */
+    .carousel-indicators [data-bs-target] {
+      background-color: #f4b400;
+    }
+        .reviews-section {
+      padding: 60px 20px;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      height: 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+    .review-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #f4b400;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .review-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .review-role {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .review-text {
+      font-size: 15px;
+      color: #444;
+    }
+    .stars i {
+      color: #ffc107;
+      margin: 0 1px;
+    }
+    /* Carousel indicators */
+    .carousel-indicators [data-bs-target] {
+      background-color: #f4b400;
+    }
+    
+      footer {
+      background: #264d42;
+      color: #fff;
+      padding: 50px 20px 20px;
+    }
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    footer p, footer a {
+      font-size: 15px;
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: all 0.3s ease;
+    }
+    footer a:hover {
+      color: #f4b400;
+      transform: translateX(3px);
+    }
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      background: #fff;
+      color: #264d42;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      background: #f4b400;
+      color: #fff;
+      transform: scale(1.1);
+    }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+      padding-top: 15px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #bbb;
+    }
+    /* --- FIXED SPACING --- */
+    .footer-col {
+      padding-left: 21px;
+      padding-right: 30px;
+    }
+    @media (max-width: 991px) {
+      .footer-col {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 30px;
+      }
+    }
+/* Enquiry Button */
+.enquiry-btn {
+  position: fixed;
+  top: 40%;
+  right: 50px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 50px; /* fully rounded */
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+/* Hover effect */
+.enquiry-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: rotate(-90deg) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Slide Panel */
+.contact-panel {
+  position: fixed;
+  top: 50%;
+  right: -250px; /* hidden initially */
+  transform: translateY(-50%);
+  width: 220px;
+  background: #fff;
+  border-radius: 30px; /* round panel */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.contact-panel.show {
+  right: 70px; /* show when active */
+}
+
+/* Panel options */
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 50px; /* fully rounded */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-option i {
+  font-size: 20px;
+}
+
+/* Specific colors */
+.mail { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.phone { background: linear-gradient(135deg, #ff512f, #dd2476); }
+
+.contact-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
