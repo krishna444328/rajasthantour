@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS -->
      <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/new.css">
       <style>
     * {
       margin: 0;
@@ -660,6 +661,117 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
   </style>
+  <style>
+/* Enquiry Button */
+.rt-enquiry-btn {
+  position: fixed;
+  top: 76%;
+  right: 50px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.rt-enquiry-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: rotate(-90deg) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Slide Form Panel */
+.rt-contact-panel {
+  position: fixed;
+  top: 50%;
+  right: -320px; /* hidden initially */
+  transform: translateY(-50%);
+  width: -340px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.rt-contact-panel.rt-show {
+  right: 70px; /* show when active */
+}
+
+/* Form */
+.rt-contact-panel h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #dd2476;
+}
+
+.rt-contact-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rt-contact-panel input,
+.rt-contact-panel select,
+.rt-contact-panel textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.rt-contact-panel input:focus,
+.rt-contact-panel select:focus,
+.rt-contact-panel textarea:focus {
+  border-color: #dd2476;
+  box-shadow: 0 0 6px rgba(221,36,118,0.5);
+}
+
+.rt-contact-panel button.rt-submit-btn {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rt-contact-panel button.rt-submit-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb347);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rt-contact-panel {
+    width: 79%;
+    right: -100%;
+  }
+  .rt-contact-panel.rt-show {
+    right: 6%;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -671,7 +783,7 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="../">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../about/">About</a></li>
       <!-- <li><a href="#">Packages</a></li> -->
       <li>
@@ -761,6 +873,66 @@
 <script>
 function togglePanel() {
   document.getElementById("contactPanel").classList.toggle("show");
+}
+</script>
+<!-- Enquiry Button -->
+<button class="rt-enquiry-btn" onclick="togglePanels()">
+  <i class="fa-solid fa-envelope"></i> Enquiry
+</button>
+
+<!-- Slide Form Panel -->
+<div class="rt-contact-panel" id="contactPanels">
+  <h2>Enquiry Form</h2>
+  <form onsubmit="return validateForm(event)">
+    <input type="text" id="name" placeholder="Enter Name" required>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="tel" id="number" placeholder="Enter Number" pattern="[0-9]{10}" maxlength="10" required>
+    <textarea id="address" rows="2" placeholder="Enter Address" required></textarea>
+
+    <select id="taxi" required>
+      <option value="">Select Taxi</option>
+      <option value="sedan">Sedan</option>
+      <option value="suv">SUV</option>
+      <option value="hatchback">Hatchback</option>
+    </select>
+
+    <select id="destination" required>
+      <option value="">Select Destination</option>
+      <option value="jaipur">Jaipur</option>
+      <option value="udaipur">Udaipur</option>
+      <option value="jodhpur">Jodhpur</option>
+      <option value="delhi">Delhi</option>
+    </select>
+
+    <button type="submit" class="rt-submit-btn">Submit</button>
+  </form>
+</div>
+
+<script>
+function togglePanels() {
+  document.getElementById("contactPanels").classList.toggle("rt-show");
+}
+
+function validateForm(event) {
+  event.preventDefault(); // stop form submit
+
+  const email = document.getElementById("email").value;
+  const number = document.getElementById("number").value;
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const numberPattern = /^[0-9]{10}$/;
+
+  if (!email.match(emailPattern)) {
+    alert("Please enter a valid email!");
+    return false;
+  }
+  if (!number.match(numberPattern)) {
+    alert("Please enter a valid 10-digit number!");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+  return true;
 }
 </script>
   <!-- About Content Section -->
@@ -866,6 +1038,7 @@ function togglePanel() {
       }
     }
   </style>
+
   <section class="travel-guide-container">
     <h2>Exclusive Rajasthan Vacation Packages</h2>
     <p>
