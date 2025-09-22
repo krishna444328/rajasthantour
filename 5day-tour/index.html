@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS -->
      <link rel="stylesheet" href="../css/style.css">
+          <link rel="stylesheet" href="../css/new.css">
        <style>
     * {
       margin: 0;
@@ -513,7 +514,7 @@
     </div>
 
      <ul class="nav-links">
-      <li><a href="../">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../about/">About</a></li>
       <!-- <li><a href="#">Packages</a></li> -->
       <li>
@@ -604,7 +605,66 @@ function togglePanel() {
   document.getElementById("contactPanel").classList.toggle("show");
 }
 </script>
+<!-- Enquiry Button -->
+<button class="rt-enquiry-btn" onclick="togglePanels()">
+  <i class="fa-solid fa-envelope"></i> Enquiry
+</button>
 
+<!-- Slide Form Panel -->
+<div class="rt-contact-panel" id="contactPanels">
+  <h2>Enquiry Form</h2>
+  <form onsubmit="return validateForm(event)">
+    <input type="text" id="name" placeholder="Enter Name" required>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="tel" id="number" placeholder="Enter Number" pattern="[0-9]{10}" maxlength="10" required>
+    <textarea id="address" rows="2" placeholder="Enter Address" required></textarea>
+
+    <select id="taxi" required>
+      <option value="">Select Taxi</option>
+      <option value="sedan">Sedan</option>
+      <option value="suv">SUV</option>
+      <option value="hatchback">Hatchback</option>
+    </select>
+
+    <select id="destination" required>
+      <option value="">Select Destination</option>
+      <option value="jaipur">Jaipur</option>
+      <option value="udaipur">Udaipur</option>
+      <option value="jodhpur">Jodhpur</option>
+      <option value="delhi">Delhi</option>
+    </select>
+
+    <button type="submit" class="rt-submit-btn">Submit</button>
+  </form>
+</div>
+
+<script>
+function togglePanels() {
+  document.getElementById("contactPanels").classList.toggle("rt-show");
+}
+
+function validateForm(event) {
+  event.preventDefault(); // stop form submit
+
+  const email = document.getElementById("email").value;
+  const number = document.getElementById("number").value;
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const numberPattern = /^[0-9]{10}$/;
+
+  if (!email.match(emailPattern)) {
+    alert("Please enter a valid email!");
+    return false;
+  }
+  if (!number.match(numberPattern)) {
+    alert("Please enter a valid 10-digit number!");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+  return true;
+}
+</script>
   <!-- About Content Section -->
 <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">5 Days Rajasthan Tour</h1>
