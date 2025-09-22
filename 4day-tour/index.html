@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS -->
      <link rel="stylesheet" href="../css/style.css">
-     
-       <style>
+     <link rel="stylesheet" href="new.css">
+     <link rel="stylesheet" href="../css/new.css">
+      <style>
     * {
       margin: 0;
       padding: 0;
@@ -199,10 +200,11 @@
       }
     }
   </style>
-     <style>
+  <style>
+
     /* Banner Section */
     .about-banner {
-      background-image: url('../img/Lake-Pichola-udaipur-city-tour-Rathore-Tour-and-Travels.webp');
+      background-image: url('../img/3-days-jaipur-tour-package-rathore-tour-and-travels.jpg');
       background-size: cover;
       background-position: center;
       height: 300px;
@@ -371,6 +373,111 @@
       margin-top: 10px;
     }
 </style>
+<!-- <style>
+  <style>
+  :root{
+    --gap: 16px;
+    --card-radius: 12px;
+    --card-bg: #ffffff;
+    --card-border: #e6e6e6;
+    --accent: #2563eb;
+    --shadow: 0 6px 18px rgba(37,99,235,0.08);
+  }
+  body{
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: linear-gradient(180deg,#f7f9fc,#ffffff);
+    padding:24px;
+    margin:0;
+    color:#0f172a;
+  }
+
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  h1{ font-size:20px; margin:0 0 14px 0; }
+
+  /* Grid: desktop shows exactly 5 columns, then responsive breakpoints */
+  .cards {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(5, 1fr); /* desktop */
+    align-items: stretch;
+  }
+
+  /* tablet */
+  @media (max-width:1100px){
+    .cards{ grid-template-columns: repeat(3, 1fr); }
+  }
+  /* small tablet / phablet */
+  @media (max-width:720px){
+    .cards{ grid-template-columns: repeat(2, 1fr); }
+  }
+  /* mobile */
+  @media (max-width:420px){
+    .cards{ grid-template-columns: 1fr; }
+  }
+
+  /* card as link so whole card clickable */
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    padding:16px;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+    color: inherit;
+    box-shadow: var(--shadow);
+    min-height:130px;
+    overflow: hidden;
+  }
+  .card:focus,
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(37,99,235,0.16);
+    box-shadow: 0 12px 30px rgba(37,99,235,0.12);
+  }
+
+  .card .top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .avatar{
+    width:52px; height:52px; border-radius:10px;
+    background:linear-gradient(135deg,#e0f2ff,#dbeafe);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; color:var(--accent); flex-shrink:0;
+  }
+  .title{ font-size:16px; font-weight:600; margin:0; }
+  .subtitle{ font-size:13px; margin:2px 0 0 0; color:#475569; }
+
+  .desc{ margin-top:12px; font-size:13px; color:#334155; flex:1; }
+
+  .cta{
+    margin-top:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .btn {
+    background:var(--accent);
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+  }
+
+  /* small touch target */
+  .card:active { transform: translateY(-2px); }
+
+  /* visually-hidden for accessibility if needed */
+  .sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  </style>
   <style>
     
   .cards {
@@ -417,7 +524,7 @@
     font-size: 14px;
     color: #333;
     text-align: center;
-  }
+  } -->
   </style>
   <style>
     /* Enquiry Button */
@@ -503,6 +610,7 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
   </style>
+
 </head>
 <body>
 
@@ -513,8 +621,8 @@
       <a href="#"><img src="../img/logo-white.png" alt="Logo"></a>
     </div>
 
-     <ul class="nav-links">
-      <li><a href="../">Home</a></li>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../about/">About</a></li>
       <!-- <li><a href="#">Packages</a></li> -->
       <li>
@@ -543,9 +651,8 @@
       </li>
       <li><a href="../Travel-Guide/">Travel Guide</a></li>
       <li><a href="../Blogs/">Blogs</a></li>
-      <li><a href="../Contact/">Contact</a></li>
+      <li><a href="../contact/">Contact</a></li>
     </ul>
-
     <div class="hamburger" onclick="toggleMenu(this)">
       <span></span>
       <span></span>
@@ -557,32 +664,33 @@
   <!-- Banner Section -->
   <div class="about-banner">
     <div class="container">
-      <h1>4 Days Rajasthan Tour Packages</h1>
+      <h1>3 Days Rajasthan Tour Packages</h1>
     </div>
   </div>
   <!-- Banner Section End -->
-<div class="cards">
+
+  <!-- <div class="cards">
     <a href="#" class="card">
-      <img src="../img/blog1.webp" alt="Trip 1" loading="lazy">
-      <p>Galtaji Temple, Jaipur</p>
+      <img src="https://picsum.photos/300/200?random=1" alt="Trip 1">
+      <p>City Ride Booking</p>
     </a>
     <a href="#" class="card">
-      <img src="../img/blog2.jpeg" alt="Trip 2" loading="lazy">
-      <p>City Palace, Jaipur</p>
+      <img src="https://picsum.photos/300/200?random=2" alt="Trip 2">
+      <p>Airport Transfer</p>
     </a>
     <a href="#" class="card">
-      <img src="../img/blog3.jpeg" alt="Trip 3" loading="lazy">
-      <p>Jal Mahal, Jaipur</p>
+      <img src="https://picsum.photos/300/200?random=3" alt="Trip 3">
+      <p>Outstation Package</p>
     </a>
     <a href="#" class="card">
-      <img src="../img/blog4.jpeg" alt="Trip 4" loading="lazy">
-      <p>Hawa Mahal, Jaipur</p>
+      <img src="https://picsum.photos/300/200?random=4" alt="Trip 4">
+      <p>Hourly Rental</p>
     </a>
     <a href="#" class="card">
-      <img src="../img/blog5.jpg" alt="Trip 5" loading="lazy">
-      <p>Man Sagar Lake & Jal Mahal,</p>
+      <img src="https://picsum.photos/300/200?random=5" alt="Trip 5">
+      <p>Premium Cars</p>
     </a>
-  </div>
+  </div> -->
 <!-- Enquiry Button -->
 <button class="enquiry-btn" onclick="togglePanel()">
   <i class="fa-solid fa-envelope"></i> Enquiry
@@ -606,34 +714,97 @@ function togglePanel() {
   document.getElementById("contactPanel").classList.toggle("show");
 }
 </script>
+<!-- Enquiry Button -->
+<button class="rt-enquiry-btn" onclick="togglePanels()">
+  <i class="fa-solid fa-envelope"></i> Enquiry
+</button>
+
+<!-- Slide Form Panel -->
+<div class="rt-contact-panel" id="contactPanels">
+  <h2>Enquiry Form</h2>
+  <form onsubmit="return validateForm(event)">
+    <input type="text" id="name" placeholder="Enter Name" required>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="tel" id="number" placeholder="Enter Number" pattern="[0-9]{10}" maxlength="10" required>
+    <textarea id="address" rows="2" placeholder="Enter Address" required></textarea>
+
+    <select id="taxi" required>
+      <option value="">Select Taxi</option>
+      <option value="sedan">Sedan</option>
+      <option value="suv">SUV</option>
+      <option value="hatchback">Hatchback</option>
+    </select>
+
+    <select id="destination" required>
+      <option value="">Select Destination</option>
+      <option value="jaipur">Jaipur</option>
+      <option value="udaipur">Udaipur</option>
+      <option value="jodhpur">Jodhpur</option>
+      <option value="delhi">Delhi</option>
+    </select>
+
+    <button type="submit" class="rt-submit-btn">Submit</button>
+  </form>
+</div>
+
+<script>
+function togglePanels() {
+  document.getElementById("contactPanels").classList.toggle("rt-show");
+}
+
+function validateForm(event) {
+  event.preventDefault(); // stop form submit
+
+  const email = document.getElementById("email").value;
+  const number = document.getElementById("number").value;
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const numberPattern = /^[0-9]{10}$/;
+
+  if (!email.match(emailPattern)) {
+    alert("Please enter a valid email!");
+    return false;
+  }
+  if (!number.match(numberPattern)) {
+    alert("Please enter a valid 10-digit number!");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+  return true;
+}
+</script>
   <!-- About Content Section -->
 <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">4 Days Rajasthan Tour</h1>
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">3 Days Rajasthan Tour</h1>
     <p style="color: #555;font-size: 15px;text-align: justify;">
-Rajasthan is known for its magnificent palaces, grand forts, bustling bazaars, and beautiful lakes, and we are here to help you experience the best of it. With our customized 4 days Rajasthan tour packages, you can explore the royal heritage of Rajasthan, learn about its rich history and culture, and make unforgettable memories.
+     Rajasthan is a state in northern India known for its vibrant culture, rich history, and majestic forts and palaces. The state is famous for its hospitality, colorful people, and exciting cuisine. If you have limited time to explore Rajasthan, then our 3 days Rajasthan tour packages are the perfect option for you. Rajasthan Tour Cabs is the best provider of this tour, which includes all the important attractions of Rajasthan.
 
     </p>
   </div>
 
   <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;"">Explore the Best of Rajasthan with Rajasthan Tour Cabs</h1>
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">What do the 3 Days Rajasthan itineraries include?</h1>
     <p style="color: #555;font-size: 15px;text-align: justify;">
-Rajasthan Tour Cabs offers the best Rajasthan trip plan for 4 days designed to cater to your travel needs. We take care of everything—from your accommodation to transportation—so that you can sit back, relax, and enjoy your trip. Our tour packages are designed to offer you the best experience possible, ensuring you visit all the major tourist attractions in Rajasthan.
+      The 2–3 days trip in Rajasthan offered by Rajasthan Tour Cabs is the perfect opportunity for visitors to experience Rajasthan’s rich history, culture, and hospitality in a short time. The itinerary is designed to cover all the important destinations and attractions of the state, including:<br>
+
+✨ Famous forts & palaces<br>
+✨ Jaipur sightseeing highlights<br>
+✨ Traditional Rajasthani cuisine & culture<br>
+✨ Memorable travel experiences with professional drivers<br>
+
+
     </p>
   </div>
 
   <div class="section" style="margin-bottom: 25px;padding: 15px;background: #fff;border-radius: 8px;box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">Why Choose Rajasthan Tour Cabs for Your Rajasthan Tour?</h1>
+    <h1 style="color: #333;margin-bottom: 10px;font-size: 24px;font-family: 'Poppins', sans-serif;font-weight: 600;">Book your 3 days Rajasthan trip now with Rajasthan Tour Cabs.</h1>
     <p style="color: #555;font-size: 15px;text-align: justify;">
-Rajasthan Tour Cabs is committed to providing customers with the best travel experience possible. Here’s why you should choose us for your Rajasthan tour:<br>
-Customized tour packages – We design packages to suit your needs, whether luxury or budget-friendly.<br>
-Experienced tour guides – Our knowledgeable guides ensure you have a memorable journey.<br>
-24/7 customer support – We are always available to assist with your queries.
-<br>
-Affordable prices – Get the cheapest Rajasthan tour packages without compromising on quality.<br>
-✨ Book your 4 days Rajasthan tour package with Rajasthan Tour Cabs today and discover the royal charm of Rajasthan!
+     If you want to experience the best of Rajasthan in a short time, then our Rajasthan trip plan for 3 days is perfect for you.<br> With Rajasthan Tour Cabs, you can rest assured that you will have an unforgettable experience and make memories that will last a lifetime.
     </p>
   </div>
+
+
 <h1 style="text-align: center;margin-bottom: 20px;color: #333;">Frequently Asked Questions (FAQs)</h1>
 
   <div class="faq">
@@ -727,7 +898,7 @@ Affordable prices – Get the cheapest Rajasthan tour packages without compromis
         </div>
 
         <!-- Contact -->
-        <div class="col-lg-3 col-md-6 footer-col">
+               <div class="col-lg-3 col-md-6 footer-col">
           <h5>CONTACT US</h5>
           <a href="tel:+919116685533"><i class="fas fa-phone"></i> +91-9116685533</a>
           <a href="https://api.whatsapp.com/send?phone=919116685533"><i class="fa-brands fa-whatsapp"></i> +91-9116685533</a>
