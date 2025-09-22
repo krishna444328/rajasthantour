@@ -197,35 +197,102 @@
       }
     }
   </style>
-  <style>
-    /* body {
-      background: #f0f2f5;
-    } */
-    .carousel-item img {
-      object-fit: cover;
-      width: 100%; /* full width */
-      height: 60vh; /* Adjust height as needed */
+<style>
+  /* Slider container */
+  .carousel-item {
+    position: relative;
+    height: 500px; /* Slider ki fixed height */
+  }
+
+  /* Images Auto Adjust */
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image fullscreen cover hogi */
+  }
+
+  /* Overlay */
+  .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    z-index: 1;
+  }
+
+  /* Caption Styling */
+  .carousel-caption {
+    bottom: 20%;
+    z-index: 2;
+  }
+  .carousel-caption h2 {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    animation: fadeInDown 1s;
+  }
+  .carousel-caption p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    animation: fadeInUp 1.2s;
+  }
+
+  /* Custom indicators */
+  .carousel-indicators [data-bs-target] {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  .carousel-indicators .active {
+    opacity: 1;
+    transform: scale(1.3);
+    background: #ff512f;
+  }
+
+  /* Controls */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+  }
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    background-color: #ff512f;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive height */
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 300px; /* Mobile ke liye choti height */
     }
-    /* Optional: add shadow and rounded corners for a nicer look */
-    .carousel-inner {
-      border-radius: 15px;
-      overflow: hidden;
-      /* box-shadow: 0 8px 20px rgba(0,0,0,0.3); */
+    .carousel-caption h2 {
+      font-size: 28px;
     }
-    /* Adjust controls size */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      width: 50px;
-      height: 50px;
-      background-size: 100%, 100%;
-      border-radius: 50%;
-      background-color: rgba(0,0,0,0.5);
+    .carousel-caption p {
+      font-size: 16px;
     }
-    /* Optional indicators style */
-    .carousel-indicators [data-bs-target] {
-      background-color: #007bff;
-    }
-  </style>
+  }
+</style>
   <style>
     /* * {
       margin: 0;
@@ -677,42 +744,49 @@
   </nav>
   <!-- Navbar End  -->
 <!-- slider Start -->
- <div style="margin-top: 65px;">
-  <div id="attractiveCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
-
-<!-- <div id="attractiveCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true"> -->
+ <!-- Attractive Slider -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <!-- Indicators -->
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#attractiveCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#attractiveCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#attractiveCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
   </div>
 
   <!-- Slides -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/1743502695-67ebbd670246e.webp" class="d-block w-100" alt="Slide 1" loading="lazy">
+      <img src="img/img1.jpg" alt="Slide 1">
+      <!-- <img src="img/istockphoto-2150015755-1024x1024.jpg" alt="Slide 1"> -->
+      <div class="carousel-caption">
+        <h2>Explore Rajasthan</h2>
+        <p>Book Luxury Taxi & Tour Packages</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="img/rajasthan-tours.jpg" class="d-block w-100" alt="Slide 2" loading="lazy">
+      <img src="img/rajasthan-tours.jpg" alt="Slide 2">
+      <div class="carousel-caption">
+        <h2>Heritage & Culture</h2>
+        <p>Experience the Royal Rajasthan</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="img/6-10-days-rajasthan.jpg" class="d-block w-100" alt="Slide 3" loading="lazy">
+      <img src="img/6-10-days-rajasthan.jpg" alt="Slide 3">
+      <div class="carousel-caption">
+        <h2>Comfortable Journey</h2>
+        <p>Book Sedan, SUV, Luxury Cars</p>
+      </div>
     </div>
   </div>
 
   <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#attractiveCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#attractiveCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
   </button>
 </div>
-</div>
-
 <!-- Enquiry Button -->
 <button class="enquiry-btn" onclick="togglePanel()">
   <i class="fa-solid fa-envelope"></i> Enquiry
